@@ -9,7 +9,7 @@
 The goal of handler is to make my life easier. It contains a series of
 functions that I generally use.
 
-`handle_required_args`: check if required arguments of a functions are
+`handle_required_args`: check if required arguments of a function are
 missing and create a message that lists them
 
 ## Installation
