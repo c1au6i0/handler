@@ -11,7 +11,7 @@ handle_required_args <- function(required_arg, get_arg = FALSE) {
   passed <- as.list(sys.call(-1))[-1]
   required_arg_missing <- required_arg[!required_arg %in% names(passed)]
 
-  if (length(required_arg_missing) != 0) cli::cli_abort("The argument {.field {required_arg_missing}} {?is/is/are} required.")
+  if (length(required_arg_missing) != 0) cli::cli_abort("The argument{?s} {.field {required_arg_missing}} {?is/is/are} required.")
 
   if (get_arg) return(passed)
 

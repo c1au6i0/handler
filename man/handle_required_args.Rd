@@ -4,10 +4,12 @@
 \alias{handle_required_args}
 \title{Checked required arg}
 \usage{
-handle_required_args(required_arg)
+handle_required_args(required_arg, get_arg = FALSE)
 }
 \arguments{
 \item{required_arg}{Vector of required arguments.}
+
+\item{get_arg}{If TRUE output a list of arguments.}
 }
 \description{
 Function that handle missing arguments. It checks if there are required arguments that are missng and
