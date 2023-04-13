@@ -27,14 +27,23 @@ test_that("expect values", {
   expect_snapshot(fun_x(alpha = 15, beta = 16, get_arg = TRUE))
 })
 
-# try_symb <-  13
+# fun_y <- function(y){
+#   fun_x(alpha = y)
+# }
+#
+# fun_z <- function(z){
+#   fun_y(y = z)
+# }
+# fun_z(z = try_symb)
+#
+#
 # fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
-# #
-# test_that("expect symbol eval", {
-#   try_symb <-  13
-#   # expected_symbol <- fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
-#   expect_success(fun_x(alpha = try_symb, beta = 15, get_arg = TRUE))
-# })
+#
+test_that("expect symbol eval", {
+  try_symb <-  13
+  expected_symbol <- fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
+  expect_snapshot(expected_symbol)
+})
 
 # expect_snapshot(fun_x(alpha = 15, beta = 16, get_arg = TRUE)
 #

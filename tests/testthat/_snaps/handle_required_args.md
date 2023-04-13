@@ -13,3 +13,18 @@
       [1] TRUE
       
 
+# expect symbol eval
+
+    Code
+      expected_symbol
+    Output
+      $alpha
+      [1] 13
+      
+      $beta
+      [1] 15
+      
+      $get_arg
+      [1] TRUE
+      
+
