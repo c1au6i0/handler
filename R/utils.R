@@ -9,7 +9,7 @@
 handle_required_args <- function(required_arg, get_arg = FALSE) {
 
   passed <- as.list(sys.call(-1))[-1]
-  passed <- lapply(passed, rlang::eval_tidy,  env = rlang::caller_env(n = 1))
+  passed <- lapply(passed, eval)
 
   required_arg_missing <- required_arg[!required_arg %in% names(passed)]
 
