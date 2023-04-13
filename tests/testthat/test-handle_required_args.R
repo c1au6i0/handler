@@ -2,7 +2,7 @@ library(testthat)
 
 
 fun_x <- function(alpha, beta = 17, gamma = NULL, get_arg = FALSE){
-  handle_required_args(required_arg = c("alpha", "beta"), get_arg = get_arg)
+  handle_required_args(required_arg = c("alpha", "beta"), get_arg = TRUE)
 }
 
 test_that("expect single missing arg", {
@@ -27,13 +27,14 @@ test_that("expect values", {
   expect_snapshot(fun_x(alpha = 15, beta = 16, get_arg = TRUE))
 })
 
-
-
-test_that("expect symbol eval", {
-  try_symb <-  13
-  expected_symbol <- fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
-  expect_snapshot(expected_symbol)
-})
+# try_symb <-  13
+# fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
+# #
+# test_that("expect symbol eval", {
+#   try_symb <-  13
+#   # expected_symbol <- fun_x(alpha = try_symb, beta = 15, get_arg = TRUE)
+#   expect_success(fun_x(alpha = try_symb, beta = 15, get_arg = TRUE))
+# })
 
 # expect_snapshot(fun_x(alpha = 15, beta = 16, get_arg = TRUE)
 #

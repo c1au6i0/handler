@@ -7,8 +7,10 @@
 #' @param get_arg If TRUE output a list of arguments.
 #' @export
 handle_required_args <- function(required_arg, get_arg = FALSE) {
+
   passed <- as.list(sys.call(-1))[-1]
-  passed <- lapply(passed, eval)
+  passed <- lapply(passed, rlang::eval_tidy,  env = rlang::caller_env(n = 1))
+
   required_arg_missing <- required_arg[!required_arg %in% names(passed)]
 
   if (length(required_arg_missing) != 0) cli::cli_abort("The argument{?s} {.field {required_arg_missing}} {?is/is/are} required.")
